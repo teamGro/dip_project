@@ -45,7 +45,7 @@ gulp.task("clean", () => {
 
 gulp.task("copy", () => {
   return gulp
-    .src("public/*.html")
+    .src("sources/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("public"));
 });
@@ -59,8 +59,8 @@ gulp.task("minifyJS", () => {
 
 gulp.task("watch", () => {
   gulp.watch("sources/styles/*.css", gulp.series("getAllCSS"));
-  gulp.watch("public/*.html", gulp.series("copy"));
-  gulp.watch("public/scripts/script.js", gulp.series("minifyJS"));
+  gulp.watch("sources/*.html", gulp.series("copy"));
+  gulp.watch("sources/scripts/script.js", gulp.series("minifyJS"));
 });
 
 gulp.task(

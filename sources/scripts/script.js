@@ -14,6 +14,10 @@ $(function () {
   let galleryItems = $(".gallery__items");
   let galleryItem = $(".gallery__item");
   let linksListFooter = $(".footer__nav-list");
+  let btnCallback = $(".popup__callback");
+  let overlay = $(".overlay");
+  let templ = $("#templ");
+  let formCallback = $("#sendTel");
 
   galleryItems.removeClass("no-js");
   galleryItem.removeClass("no-js");
@@ -92,6 +96,17 @@ $(function () {
       scrollTop: scrollTop
     }, 500);
 
+  })
+
+  btnCallback.on("click", () => {
+    if (overlay.hasClass("overlay_active")) {
+      overlay.removeClass("overlay_active");
+    } else {
+      overlay.addClass("overlay_active");
+      let fragment = new DocumentFragment();
+
+      console.log(formCallback)
+    }
   })
 
   new Glide('.glide').mount()
