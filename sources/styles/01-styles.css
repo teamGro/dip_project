@@ -1,0 +1,233 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 400;
+    src        :
+        url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+        url('../fonts/roboto-v20-latin-regular.woff') format('woff');
+    font-display: swap;
+}
+
+/* roboto-500 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 500;
+    src        :
+        url('../fonts/roboto-v20-latin-500.woff2') format('woff2'),
+        url('../fonts/roboto-v20-latin-500.woff') format('woff');
+    font-display: swap;
+}
+
+/* roboto-700 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 700;
+    src        :
+        url('../fonts/roboto-v20-latin-700.woff2') format('woff2'),
+        url('../fonts/roboto-v20-latin-700.woff') format('woff');
+    font-display: swap;
+}
+
+/* roboto-900 - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 900;
+    src        :
+        url('../fonts/roboto-v20-latin-900.woff2') format('woff2'),
+        url('../fonts/roboto-v20-latin-900.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family : "Font Awesome 5 Free";
+    font-style  : normal;
+    font-weight : 400;
+    font-display: block;
+    src         : url(../fonts/fa-solid-900.woff2) format("woff2"),
+        url(../webfonts/fa-solid-900.woff) format("woff");
+}
+
+@font-face {
+    font-family : 'Font Awesome 5 Brands';
+    font-style  : normal;
+    font-weight : 400;
+    font-display: block;
+    src         : url("../fonts/fa-brands-400.woff2") format("woff2"),
+        url("../fonts/fa-brands-400.woff") format("woff");
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+
+    margin : 0;
+    padding: 0;
+
+    background-color: #f9f9f9;
+
+    font-family   : "Roboto", Arial, sans-serif;
+    font-size     : 16px;
+    color         : #8993ad;
+    font-weight   : 400;
+    line-height   : 1;
+    word-wrap     : break-word;
+    letter-spacing: -0.35px;
+}
+
+img {
+    max-width: 100%;
+    height   : auto;
+}
+
+a {
+    text-decoration: none;
+    color          : inherit;
+    font           : inherit;
+    cursor         : pointer;
+}
+
+ul {
+    list-style: none;
+    padding   : 0;
+    margin    : 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    padding: 0;
+    margin : 0;
+
+    font: inherit;
+}
+
+button {
+    border : none;
+    margin : 0;
+    padding: 0;
+
+    background-color: transparent;
+    cursor          : pointer;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip    : rect(1px 1px 1px 1px);
+    clip    : rect(1px, 1px, 1px, 1px);
+    border  : 0 !important;
+    height  : 1px !important;
+    width   : 1px !important;
+    padding : 0 !important;
+    overflow: hidden;
+}
+
+.font-dark {
+    color: #1f1f24;
+}
+
+.page-container {
+    padding: 0 6.2%;
+}
+
+.btn {
+    position: relative;
+
+    padding  : 19px 75px;
+    min-width: 280px;
+
+    color     : #ffffff;
+    text-align: center;
+
+    background-color: #ff4e2e;
+    transition      : box-shadow 1s ease, color 1s ease, outline 1s ease;
+}
+
+.btn:hover {
+    outline   : 1px solid #ff4e2e;
+    box-shadow: inset 500px 0 #fbfbfb;
+    color     : #ff4e2e;
+}
+
+.fa,
+.fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900
+}
+
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+    font-style : normal;
+    font-size  : 25px;
+}
+
+.fa-envelope:before {
+    content   : "\f0e0";
+    color     : #fa0891;
+    font-style: normal;
+}
+
+.fa-phone-alt:before {
+    content   : "\f879";
+    color     : #fa0891;
+    font-style: normal;
+}
+
+.fa-vk:before {
+    content: "\f189";
+}
+
+.fa-facebook-f:before {
+    content: "\f39e";
+}
+
+.fa-twitter:before {
+    content: "\f099";
+}
+
+.fa-instagram:before {
+    content: "\f16d";
+}
+
+@media(min-width: 1024px) {
+    body {
+        font-size: 20px;
+    }
+
+    .page-container {
+        padding: 0 3.8%;
+    }
+
+    .btn {
+        padding: 26px 106px;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .page-container {
+        width  : 1170px;
+        margin : 0 auto;
+        padding: 0;
+    }
+
+    .btn {
+        padding: 20px 72px;
+
+        font-size: 18px;
+    }
+}
