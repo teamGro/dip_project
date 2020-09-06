@@ -2,12 +2,12 @@
   "name": "dip_project",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "./node_modules/.bin/gulp dev",
     "gulp-prod": "cross-env NODE_ENV=production ./node_modules/.bin/gulp",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
