@@ -85,7 +85,7 @@
         <p class="header__info info">
           <span class="font-dark header__name info__name">Тимофей Грошев</span>
           <span class="header__skills info__skills">Frontend-разработчик и веб-верстальщик</span>
-          <a class="btn info__btn" href="#">Узнать больше</a>
+          <button class="btn info__btn popup__mail" type="submit">Узнать больше</button>
         </p>
 
         <div class="header__img-wrap">
@@ -175,7 +175,7 @@
           </li>
         </ul>
 
-        <a class="btn my-skills__btn" href="#">Узнать стоимость</a>
+        <button class="btn my-skills__btn popup__mail" type="submit">Узнать стоимость</button>
       </div>
     </section>
 
@@ -328,7 +328,7 @@
           </div>
         </div>
 
-        <a class="btn gallery-section__order" href="#">Заказать проект</a>
+        <button class="btn gallery-section__order popup__mail" type="submit">Заказать проект</button>
       </div>
     </section>
 
@@ -408,36 +408,46 @@
     <p class="footer__copyright"><small>&#169; Грошев Тимофей, 2016 - 2018</small></p>
   </footer>
   <div class="overlay">
-    <!-- <form class="form form_tel" action="" id="sendTel" autocomplete>
-      <fieldset class="form__fieldset">
-        <legend class="form__legend form__elem">Оставьте свои данные и&nbsp;я&nbsp;перезвоню вам</legend>
-
-        <label class="form__label form__elem" for="tel">Номер телефона:</label>
-        <input class="form__input form__elem" type="tel" name="user-tel" id="tel">
-
-        <label class="form__label form__elem" for="name">Имя:</label>
-        <input class="form__input form__elem" type="text" name="user-name" id="name">
-
-        <button class="form__btn btn form__elem" type="submit">Отправить</button>
-        <button class="form__close" type="button">X</button>
-      </fieldset>
-    </form> -->
   </div>
 
   <template id="templ">
     <form class="form form_tel " action="" id="sendTel" autocomplete>
       <fieldset class="form__fieldset">
-        <legend class="form__legend form__elem">Оставьте свои данные и&nbsp;я&nbsp;перезвоню вам</legend>
+        <legend class="form__legend form__elem">Для обратной связи необходимы следующие данные</legend>
+
+        <label class="form__label form__elem" for="name-tel">Имя:</label>
+        <input class="form__input form__input_name form__elem" type="text" name="user-name-tel" id="name-tel" required>
 
         <label class="form__label form__elem" for="tel">Номер телефона:</label>
-        <input class="form__input form__elem" type="tel" name="user-tel" id="tel">
-
-        <label class="form__label form__elem" for="name">Имя:</label>
-        <input class="form__input form__elem" type="text" name="user-name" id="name">
+        <input class="form__input form__input_tel form__elem" type="tel" name="user-tel" id="tel" required>
 
         <button class="form__btn btn form__elem" type="submit">Отправить</button>
-        <button class="form__close" type="button">X</button>
       </fieldset>
+      <button class="form__close" type="button">X</button>
+      <div class="form__submit">
+        <svg class="circle">
+          <circle cx="50" cy="50" r="49" />
+        </svg>
+        <img class="form__img" src="./img/png/check.png" alt="данные успешно отправлены">
+      </div>
+    </form>
+
+    <form class="form form_mail " action="" id="sendMail" autocomplete>
+      <fieldset class="form__fieldset">
+        <legend class="form__legend form__elem">Для обратной связи необходимы следующие данные</legend>
+
+        <label class="form__label form__elem" for="name">Имя:</label>
+        <input class="form__input form__elem" type="text" name="user-name" id="name" required>
+
+        <label class="form__label form__elem" for="phone">Номер телефона:</label>
+        <input class="form__input form__elem" type="tel" name="user-phone" id="phone" required>
+
+        <label class="form__label form__elem" for="phone">Email:</label>
+        <input class="form__input form__elem" type="tel" name="user-mail" id="mail" required>
+
+        <button class="form__btn btn form__elem" type="submit">Отправить</button>
+      </fieldset>
+      <button class="form__close" type="button">X</button>
     </form>
   </template>
 </body>

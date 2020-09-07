@@ -14,9 +14,12 @@ $(function () {
   let galleryItems = $(".gallery__items");
   let galleryItem = $(".gallery__item");
   let linksListFooter = $(".footer__nav-list");
-  let btnCallback = $(".popup__callback");
+
   let overlay = $(".overlay");
+  let btnCallback = $(".popup__callback");
   let formCallback = document.querySelector("#templ").content.querySelector("#sendTel");
+  let btnMail = $(".popup__mail");
+  let formMail = document.querySelector("#templ").content.querySelector("#sendMail");
 
 
   galleryItems.removeClass("no-js");
@@ -102,12 +105,63 @@ $(function () {
     let winWidth = $(window).width();
 
     if (!overlay.hasClass("overlay_active")) {
-      // overlay.removeClass("overlay_disactive");
       overlay.addClass("overlay_active");
       overlay.css("top", pageYOffset);
 
       let fragment = new DocumentFragment();
-      fragment.append(formCallback);
+      fragment.append(formCallback.cloneNode(true));
+
+      overlay.append(fragment);
+
+      document.body.style.overflow = "hidden";
+      let newWinWidth = $(window).width();
+
+      if (newWinWidth > winWidth) {
+        $("body").css("padding-right", newWinWidth - winWidth + "px");
+      }
+
+      let nameField = $(".form__input_name").val();
+      let telField = $(".form__input_tel").val();
+
+      $(".form__btn").on("click", () => {
+        // if(nameField != "" && telField != ""){
+
+        // }
+        $(".form_tel .form__fieldset").remove();
+        $(".form__submit").addClass("form__submit_active");
+        //$(".form__submit").addClass("circle");
+      })
+
+      $(".form__close").on("click", () => {
+        overlay.removeClass("overlay_active");
+        $(".form__submit").removeClass("form__submit_active");
+        $(".overlay #sendTel").remove();
+        document.body.style.overflow = "";
+        $("body").css("padding-right", 0);
+      })
+
+      overlay.on("click", (e) => {
+        if (e.target.tagName == "DIV") {
+          $(".form__submit").removeClass("form__submit_active");
+          overlay.removeClass("overlay_active");
+          $(".overlay #sendTel").remove();
+          document.body.style.overflow = "";
+          $("body").css("padding-right", 0);
+        }
+      })
+    } else {
+    }
+  })
+
+  btnMail.on("click", () => {
+    let winWidth = $(window).width();
+
+    if (!overlay.hasClass("overlay_active")) {
+      overlay.addClass("overlay_active");
+      overlay.css("top", pageYOffset);
+
+      let fragment = new DocumentFragment();
+      fragment.append(formMail.cloneNode(true));
 
       overlay.append(fragment);
 
@@ -120,24 +174,25 @@ $(function () {
 
       $(".form__close").on("click", () => {
         overlay.removeClass("overlay_active");
-        // overlay.addClass("overlay_disactive");
+        $(".overlay #sendMail").remove();
         document.body.style.overflow = "";
         $("body").css("padding-right", 0);
       })
 
       overlay.on("click", (e) => {
+        e.preventDefault();
         if (e.target.tagName == "DIV") {
           overlay.removeClass("overlay_active");
-          // overlay.addClass("overlay_disactive");
+          $(".overlay #sendMail").remove();
           document.body.style.overflow = "";
           $("body").css("padding-right", 0);
         }
       })
     } else {
-      // overlay.removeClass("overlay_disactive");
-      // overlay.addClass("overlay_active");
     }
   })
+
+
 
   new Glide('.glide').mount()
   new Glide('.glide', {

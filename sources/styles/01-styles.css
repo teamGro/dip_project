@@ -182,10 +182,11 @@ button {
 }
 
 .overlay_active .form {
-  display    : flex;
-  align-items: center;
-  width      : 250px;
-  height     : 300px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  width          : 250px;
+  height         : 300px;
 
   font: inherit;
 
@@ -194,6 +195,10 @@ button {
 
   animation         : fadeInDownBig;
   animation-duration: .4s;
+}
+
+.overlay_active .form_mail {
+  height: 350px;
 }
 
 .form__fieldset {
@@ -232,6 +237,53 @@ button {
   height       : 25px;
   border       : 1px solid #8993ad;
   border-radius: 50%;
+}
+
+.form__submit_active {
+  position: relative;
+
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  width          : 105px;
+  height         : 105px;
+  border         : 2px solid #fff;
+  border-radius  : 50%;
+
+  animation: fill .5s ease-out 1.5s forwards;
+}
+
+.circle,
+.form__img {
+  display: none;
+}
+
+.form__submit_active .circle {
+  display: flex;
+  width  : 100px;
+  height : 100px;
+  z-index: 2;
+
+  fill             : none;
+  stroke           : #ff4e2e;
+  stroke-width     : 2px;
+  stroke-linecap   : round;
+  stroke-dasharray : 520 520;
+  stroke-dashoffset: 520;
+  pointer-events   : none;
+  transform        : rotate(-90deg);
+
+  animation: circle 2s ease-out .5s both;
+}
+
+.form__submit_active .form__img {
+  position: absolute;
+
+  display  : block;
+  width    : 50px;
+  height   : auto;
+  z-index  : 1;
+  animation: check .5s ease-out 1.5s both;
 }
 
 .fa,
@@ -275,6 +327,50 @@ button {
   content: "\f16d";
 }
 
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 550;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray : 520;
+    transform        : rotate(-90deg) scale(1);
+    opacity          : 1;
+  }
+
+  90%,
+  100% {
+    stroke-dasharray: 700 700;
+    transform       : rotate(-90deg) scale(2);
+    opacity         : 0;
+  }
+}
+
+@keyframes fill {
+  0% {
+    background: #fff;
+
+  }
+
+  100% {
+    background  : #fff;
+    border-color: #ff4e2e;
+  }
+}
+
+@keyframes check {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    z-index: 2;
+    opacity: 1;
+  }
+}
+
+
 @media(min-width: 1024px) {
   body {
     font-size: 20px;
@@ -289,7 +385,13 @@ button {
   }
 
   .overlay_active .form {
-    width: 350px;
+    width : 350px;
+    height: 350px;
+  }
+
+  .overlay_active .form_mail {
+    height: 450px;
+    width : 400px;
   }
 
   .form__btn {
@@ -318,8 +420,13 @@ button {
   }
 
   .overlay_active .form {
+    width : 500px;
+    height: 450px;
+  }
+
+  .overlay_active .form_mail {
+    height: 550px;
     width : 450px;
-    height: 350px;
   }
 
   .form__elem:not(:last-child) {
