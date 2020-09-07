@@ -16,8 +16,8 @@ $(function () {
   let linksListFooter = $(".footer__nav-list");
   let btnCallback = $(".popup__callback");
   let overlay = $(".overlay");
-  let templ = $("#templ");
-  let formCallback = $("#sendTel");
+  let formCallback = document.querySelector("#templ").content.querySelector("#sendTel");
+
 
   galleryItems.removeClass("no-js");
   galleryItem.removeClass("no-js");
@@ -99,13 +99,43 @@ $(function () {
   })
 
   btnCallback.on("click", () => {
-    if (overlay.hasClass("overlay_active")) {
-      overlay.removeClass("overlay_active");
-    } else {
-      overlay.addClass("overlay_active");
-      let fragment = new DocumentFragment();
+    let winWidth = $(window).width();
 
-      console.log(formCallback)
+    if (!overlay.hasClass("overlay_active")) {
+      // overlay.removeClass("overlay_disactive");
+      overlay.addClass("overlay_active");
+      overlay.css("top", pageYOffset);
+
+      let fragment = new DocumentFragment();
+      fragment.append(formCallback);
+
+      overlay.append(fragment);
+
+      document.body.style.overflow = "hidden";
+      let newWinWidth = $(window).width();
+
+      if (newWinWidth > winWidth) {
+        $("body").css("padding-right", newWinWidth - winWidth + "px");
+      }
+
+      $(".form__close").on("click", () => {
+        overlay.removeClass("overlay_active");
+        // overlay.addClass("overlay_disactive");
+        document.body.style.overflow = "";
+        $("body").css("padding-right", 0);
+      })
+
+      overlay.on("click", (e) => {
+        if (e.target.tagName == "DIV") {
+          overlay.removeClass("overlay_active");
+          // overlay.addClass("overlay_disactive");
+          document.body.style.overflow = "";
+          $("body").css("padding-right", 0);
+        }
+      })
+    } else {
+      // overlay.removeClass("overlay_disactive");
+      // overlay.addClass("overlay_active");
     }
   })
 

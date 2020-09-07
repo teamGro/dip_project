@@ -15,6 +15,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+  <!-- <link rel="stylesheet" href="styles/animate.css"> -->
   <link rel="stylesheet" href="styles/styles.min.css">
   <script src="./scripts/jquery-3.5.1.min.js"></script>
   <script src="scripts/glide.min.js"></script>
@@ -406,18 +407,36 @@
     </div>
     <p class="footer__copyright"><small>&#169; Грошев Тимофей, 2016 - 2018</small></p>
   </footer>
-  <div class="overlay"></div>
+  <div class="overlay">
+    <!-- <form class="form form_tel" action="" id="sendTel" autocomplete>
+      <fieldset class="form__fieldset">
+        <legend class="form__legend form__elem">Оставьте свои данные и&nbsp;я&nbsp;перезвоню вам</legend>
+
+        <label class="form__label form__elem" for="tel">Номер телефона:</label>
+        <input class="form__input form__elem" type="tel" name="user-tel" id="tel">
+
+        <label class="form__label form__elem" for="name">Имя:</label>
+        <input class="form__input form__elem" type="text" name="user-name" id="name">
+
+        <button class="form__btn btn form__elem" type="submit">Отправить</button>
+        <button class="form__close" type="button">X</button>
+      </fieldset>
+    </form> -->
+  </div>
 
   <template id="templ">
-    <form action="" id="sendTel" autocomplete>
-      <fieldset>
-        <legend>Оставьте свои данные для связи</legend>
+    <form class="form form_tel " action="" id="sendTel" autocomplete>
+      <fieldset class="form__fieldset">
+        <legend class="form__legend form__elem">Оставьте свои данные и&nbsp;я&nbsp;перезвоню вам</legend>
 
-        <label for="tel">Номер телефона</label>
-        <input type="tel" name="user-tel" id="tel">
+        <label class="form__label form__elem" for="tel">Номер телефона:</label>
+        <input class="form__input form__elem" type="tel" name="user-tel" id="tel">
 
-        <label for="name">Имя</label>
-        <input type="text" name="user-name" id="name">
+        <label class="form__label form__elem" for="name">Имя:</label>
+        <input class="form__input form__elem" type="text" name="user-name" id="name">
+
+        <button class="form__btn btn form__elem" type="submit">Отправить</button>
+        <button class="form__close" type="button">X</button>
       </fieldset>
     </form>
   </template>
