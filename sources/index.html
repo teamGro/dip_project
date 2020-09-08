@@ -416,20 +416,22 @@
         <legend class="form__legend form__elem">Для обратной связи необходимы следующие данные</legend>
 
         <label class="form__label form__elem" for="name-tel">Имя:*</label>
-        <input class="form__input form__input_name form__elem" type="text" name="user-name-tel" id="name-tel" required>
+        <input class="form__input form__input_name form__elem" type="text" name="user-name-tel" id="name-tel" required
+          maxlength="20">
 
         <label class="form__label form__elem" for="tel">Номер телефона:*</label>
-        <input class="form__input form__input_tel form__elem" type="tel" name="user-tel" id="tel" required>
+        <input class="form__input form__input_tel form__elem" type="tel" name="user-tel" id="tel" required
+          maxlength="10">
 
-        <button class="form__btn btn form__elem" type="submit">Отправить</button>
+        <button class="form__btn form__btn_submit btn form__elem" type="submit">Отправить</button>
 
         <small class="form__desc">* - поля, необходимые для заполнения</small>
       </fieldset>
 
-      <button class="form__close" type="button">X</button>
+      <button class="form__btn form__btn_close" type="button">X</button>
 
       <div class="form__submit">
-        <svg class="circle">
+        <svg class="form__circle">
           <circle cx="50" cy="50" r="49" />
         </svg>
 
@@ -442,23 +444,26 @@
         <legend class="form__legend form__elem">Для обратной связи необходимы следующие данные</legend>
 
         <label class="form__label form__elem" for="name">Имя:</label>
-        <input class="form__input form__elem" type="text" name="user-name" id="name" required>
+        <input class="form__input form__input_name form__elem" type="text" name="user-name" id="name" required
+          maxlength="20">
 
         <label class="form__label form__elem" for="phone">Номер телефона:</label>
-        <input class="form__input form__elem" type="tel" name="user-phone" id="phone" required>
+        <input class="form__input form__input_tel form__elem" type="tel" name="user-phone" id="phone" required
+          maxlength="10">
 
         <label class="form__label form__elem" for="phone">Email:</label>
-        <input class="form__input form__elem" type="tel" name="user-mail" id="mail" required>
+        <input class="form__input form__input_mail form__elem" type="tel" name="user-mail" id="mail" required
+          maxlength="20">
 
-        <button class="form__btn btn form__elem" type="submit">Отправить</button>
+        <button class="form__btn form__btn_submit btn form__elem" type="submit">Отправить</button>
 
         <small class="form__desc">* - поля, необходимые для заполнения</small>
       </fieldset>
 
-      <button class="form__close" type="button">X</button>
+      <button class="form__btn form__btn_close" type="button">X</button>
 
       <div class="form__submit">
-        <svg class="circle">
+        <svg class="form__circle">
           <circle cx="50" cy="50" r="49" />
         </svg>
 

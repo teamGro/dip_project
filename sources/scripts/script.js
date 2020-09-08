@@ -120,36 +120,23 @@ $(function () {
         $("body").css("padding-right", newWinWidth - winWidth + "px");
       }
 
-      let nameField = $(".form__input_name").val();
-      let telField = $(".form__input_tel").val();
+      let nameField = $(".form__input_name");
+      let telField = $(".form__input_tel");
 
-      $(".form__btn").on("click", () => {
-        // if(nameField != "" && telField != ""){
-
-        // }
-        $(".form_tel .form__fieldset").remove();
-        $(".form__submit").addClass("form__submit_active");
-        //$(".form__submit").addClass("circle");
+      $(".form__btn_submit").on("click", () => {
+        checkUserData("#sendTel", nameField, telField,);
       })
 
-      $(".form__close").on("click", () => {
-        overlay.removeClass("overlay_active");
-        $(".form__submit").removeClass("form__submit_active");
-        $(".overlay #sendTel").remove();
-        document.body.style.overflow = "";
-        $("body").css("padding-right", 0);
+      $(".form__btn_close").on("click", () => {
+        closePopup(overlay, "#sendTel");
       })
 
       overlay.on("click", (e) => {
+        e.preventDefault();
         if (e.target.tagName == "DIV") {
-          $(".form__submit").removeClass("form__submit_active");
-          overlay.removeClass("overlay_active");
-          $(".overlay #sendTel").remove();
-          document.body.style.overflow = "";
-          $("body").css("padding-right", 0);
+          closePopup(overlay, "#sendTel");
         }
       })
-    } else {
     }
   })
 
@@ -172,36 +159,26 @@ $(function () {
         $("body").css("padding-right", newWinWidth - winWidth + "px");
       }
 
-      $(".form__btn").on("click", () => {
-        // if(nameField != "" && telField != ""){
+      let nameField = $(".form__input_name");
+      let telField = $(".form__input_tel");
+      let mailField = $(".form__input_mail");
 
-        // }
-        $(".form_mail .form__fieldset").remove();
-        $(".form__submit").addClass("form__submit_active");
-        //$(".form__submit").addClass("circle");
+      $(".form__btn_submit").on("click", () => {
+        checkUserData("#sendMail", nameField, telField, mailField);
       })
 
-      $(".form__close").on("click", () => {
-        overlay.removeClass("overlay_active");
-        $(".overlay #sendMail").remove();
-        document.body.style.overflow = "";
-        $("body").css("padding-right", 0);
+      $(".form__btn_close").on("click", () => {
+        closePopup(overlay, "#sendMail");
       })
 
       overlay.on("click", (e) => {
         e.preventDefault();
         if (e.target.tagName == "DIV") {
-          overlay.removeClass("overlay_active");
-          $(".overlay #sendMail").remove();
-          document.body.style.overflow = "";
-          $("body").css("padding-right", 0);
+          closePopup(overlay, "#sendMail");
         }
       })
-    } else {
     }
   })
-
-
 
   new Glide('.glide').mount()
   new Glide('.glide', {
@@ -219,3 +196,35 @@ $(function () {
     }
   }).mount()
 })
+
+function checkUserData(formType, nameField, telField, mailField = false) {
+  if (nameField.val() == "" || telField.val() == "") {
+    if (nameField.val() == "") {
+      nameField.addClass("form__field_err");
+    }
+    if (telField.val() == "") {
+      telField.addClass("form__field_err");
+    }
+    if (mailField && mailField.val() == "") {
+      mailField.addClass("form__field_err");
+    }
+    return;
+  } else {
+    nameField.removeClass("form__field_err");
+    telField.removeClass("form__field_err");
+    if (mailField) {
+      mailField.removeClass("form__field_err");
+    }
+    $(`${formType} .form__fieldset`).remove();
+    $(".form__submit").addClass("form__submit_active");
+  }
+  return;
+}
+
+function closePopup(handler, formType) {
+  handler.removeClass("overlay_active");
+  $(`.overlay ${formType}`).remove();
+  document.body.style.overflow = "";
+  $("body").css("padding-right", 0);
+  return;
+}
