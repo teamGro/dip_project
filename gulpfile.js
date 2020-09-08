@@ -11,6 +11,7 @@ const del = require("del");
 const notify = require("gulp-notify");
 const rename = require("gulp-rename");
 const minify = require("gulp-minify");
+const autoprefixer = require('gulp-autoprefixer');
 
 let isDevelopment =
   !process.env.NODE_ENV || process.env.NODE_ENV == "development";
@@ -33,6 +34,9 @@ gulp.task("getAllCSS", () => {
       .pipe(remember())
       .pipe(concat("styles.css"))
       .pipe(gulpIf(isDevelopment, sourcemaps.write()))
+      .pipe(autoprefixer({
+        cascade: false
+      }))
       .pipe(cssmin())
       .pipe(rename("styles.min.css"))
       .pipe(gulp.dest("public/styles"))
@@ -73,7 +77,7 @@ gulp.task("serve", () => {
     server: "public"
   });
 
-  browserSync.watch("public/**/*.*").on("change", browserSync.reload);
+  gulp.watch("public/**/*.*").on("change", browserSync.reload);
 });
 
 gulp.task("dev", gulp.series("build", gulp.parallel("watch", "serve")));
