@@ -172,6 +172,15 @@ $(function () {
         $("body").css("padding-right", newWinWidth - winWidth + "px");
       }
 
+      $(".form__btn").on("click", () => {
+        // if(nameField != "" && telField != ""){
+
+        // }
+        $(".form_mail .form__fieldset").remove();
+        $(".form__submit").addClass("form__submit_active");
+        //$(".form__submit").addClass("circle");
+      })
+
       $(".form__close").on("click", () => {
         overlay.removeClass("overlay_active");
         $(".overlay #sendMail").remove();

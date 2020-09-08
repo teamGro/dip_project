@@ -415,19 +415,24 @@
       <fieldset class="form__fieldset">
         <legend class="form__legend form__elem">Для обратной связи необходимы следующие данные</legend>
 
-        <label class="form__label form__elem" for="name-tel">Имя:</label>
+        <label class="form__label form__elem" for="name-tel">Имя:*</label>
         <input class="form__input form__input_name form__elem" type="text" name="user-name-tel" id="name-tel" required>
 
-        <label class="form__label form__elem" for="tel">Номер телефона:</label>
+        <label class="form__label form__elem" for="tel">Номер телефона:*</label>
         <input class="form__input form__input_tel form__elem" type="tel" name="user-tel" id="tel" required>
 
         <button class="form__btn btn form__elem" type="submit">Отправить</button>
+
+        <small class="form__desc">* - поля, необходимые для заполнения</small>
       </fieldset>
+
       <button class="form__close" type="button">X</button>
+
       <div class="form__submit">
         <svg class="circle">
           <circle cx="50" cy="50" r="49" />
         </svg>
+
         <img class="form__img" src="./img/png/check.png" alt="данные успешно отправлены">
       </div>
     </form>
@@ -446,8 +451,19 @@
         <input class="form__input form__elem" type="tel" name="user-mail" id="mail" required>
 
         <button class="form__btn btn form__elem" type="submit">Отправить</button>
+
+        <small class="form__desc">* - поля, необходимые для заполнения</small>
       </fieldset>
+
       <button class="form__close" type="button">X</button>
+
+      <div class="form__submit">
+        <svg class="circle">
+          <circle cx="50" cy="50" r="49" />
+        </svg>
+
+        <img class="form__img" src="./img/png/check.png" alt="данные успешно отправлены">
+      </div>
     </form>
   </template>
 </body>

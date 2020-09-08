@@ -239,6 +239,11 @@ button {
   border-radius: 50%;
 }
 
+.form__desc {
+  position: absolute;
+  bottom  : 15px;
+}
+
 .form__submit_active {
   position: relative;
 
