@@ -65,7 +65,8 @@
   flex-direction: column;
 }
 
-.btn-callback-footer {
+.btn-callback_footer {
+  font-size     : 16px;
   letter-spacing: -1px;
 }
 
@@ -226,7 +227,7 @@
     width: auto;
   }
 
-  .btn-callback-footer {
+  .btn-callback_footer {
     margin-bottom: 35px;
     padding      : 16px 61px;
 

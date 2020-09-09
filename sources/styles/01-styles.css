@@ -151,12 +151,22 @@ button {
 
   color     : #ffffff;
   text-align: center;
+  font-size : 16px;
 
   background-color: #ff4e2e;
   transition      : box-shadow 1s ease, color 1s ease, outline 1s ease;
 }
 
-
+.fa,
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing : antialiased;
+  display                : inline-block;
+  font-style             : normal;
+  font-variant           : normal;
+  text-rendering         : auto;
+  line-height            : 1;
+}
 
 .fa,
 .fas {
@@ -169,6 +179,11 @@ button {
   font-weight: 400;
   font-style : normal;
   font-size  : 25px;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
 }
 
 .fa-envelope:before {
@@ -199,6 +214,10 @@ button {
   content: "\f16d";
 }
 
+.fa-times:before {
+  content: "\f00d";
+}
+
 @media(min-width: 1024px) {
   body {
     font-size: 20px;
@@ -210,6 +229,8 @@ button {
 
   .btn {
     padding: 26px 106px;
+
+    font-size: 18px;
   }
 }
 
@@ -223,8 +244,6 @@ button {
 
   .btn {
     padding: 20px 72px;
-
-    font-size: 18px;
   }
 
   .btn:hover {

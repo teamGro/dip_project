@@ -121,20 +121,29 @@ $(function () {
       }
 
       let nameField = $(".form__input_name");
+      setTimeout(() => {
+        nameField.focus()
+      }, 500);
       let telField = $(".form__input_tel");
 
       $(".form__btn_submit").on("click", () => {
         checkUserData("#sendTel", nameField, telField,);
-      })
+      });
 
       $(".form__btn_close").on("click", () => {
         closePopup(overlay, "#sendTel");
-      })
+      });
 
       overlay.on("click", (e) => {
         e.preventDefault();
         if (e.target.tagName == "DIV") {
           closePopup(overlay, "#sendTel");
+        }
+      });
+
+      $("body").on("keyup", (e) => {
+        if (e.keyCode == 27) {
+          closePopup(overlay, "#sendMail");
         }
       })
     }
@@ -160,6 +169,9 @@ $(function () {
       }
 
       let nameField = $(".form__input_name");
+      setTimeout(() => {
+        nameField.focus()
+      }, 500);
       let telField = $(".form__input_tel");
       let mailField = $(".form__input_mail");
 
@@ -169,14 +181,20 @@ $(function () {
 
       $(".form__btn_close").on("click", () => {
         closePopup(overlay, "#sendMail");
-      })
+      });
 
       overlay.on("click", (e) => {
         e.preventDefault();
         if (e.target.tagName == "DIV") {
           closePopup(overlay, "#sendMail");
         }
-      })
+      });
+
+      $("body").on("keyup", (e) => {
+        if (e.keyCode == 27) {
+          closePopup(overlay, "#sendMail");
+        }
+      });
     }
   })
 
