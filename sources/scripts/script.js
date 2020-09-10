@@ -124,7 +124,21 @@ $(function () {
       setTimeout(() => {
         nameField.focus()
       }, 500);
+      nameField.on("focus", function () {
+        addErrClass($(this));
+      });
+      nameField.on("blur", function () {
+        removeErrClass($(this))
+      });
+
       let telField = $(".form__input_tel");
+      telField.on("focus", function () {
+        addErrClass($(this));
+      });
+      telField.on("blur", function () {
+        removeErrClass($(this));
+      });
+
 
       $(".form__btn_submit").on("click", () => {
         checkUserData("#sendTel", nameField, telField,);
@@ -172,8 +186,29 @@ $(function () {
       setTimeout(() => {
         nameField.focus()
       }, 500);
+      nameField.on("focus", function () {
+        addErrClass($(this));
+      });
+      nameField.on("blur", function () {
+        removeErrClass($(this))
+      });
+
+
       let telField = $(".form__input_tel");
+      telField.on("focus", function () {
+        addErrClass($(this));
+      });
+      telField.on("blur", function () {
+        removeErrClass($(this));
+      });
+
       let mailField = $(".form__input_mail");
+      mailField.on("focus", function () {
+        addErrClass($(this));
+      });
+      mailField.on("blur", function () {
+        removeErrClass($(this));
+      });
 
       $(".form__btn_submit").on("click", () => {
         checkUserData("#sendMail", nameField, telField, mailField);
@@ -245,4 +280,16 @@ function closePopup(handler, formType) {
   document.body.style.overflow = "";
   $("body").css("padding-right", 0);
   return;
+}
+
+function addErrClass(elem) {
+  if (elem.hasClass("form__field_err")) {
+    elem.removeClass("form__field_err");
+  }
+}
+
+function removeErrClass(elem) {
+  if (elem.val() == "") {
+    elem.addClass("form__field_err");
+  }
 }
