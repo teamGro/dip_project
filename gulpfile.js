@@ -43,8 +43,11 @@ gulp.task("getAllCSS", () => {
   );
 });
 
-gulp.task("clean", () => {
-  return del(["public/styles"]);
+gulp.task("clean", (done) => {
+  del(["public/styles"]);
+  del(["public/*.html"]);
+  del(["public/scripts/script-min.js"]);
+  done();
 });
 
 gulp.task("copy", () => {
@@ -74,7 +77,8 @@ gulp.task(
 
 gulp.task("serve", () => {
   browserSync.init({
-    server: "public"
+    server: "public",
+    tunnel: true
   });
 
   gulp.watch("public/**/*.*").on("change", browserSync.reload);
