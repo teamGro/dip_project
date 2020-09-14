@@ -189,8 +189,8 @@
 
   90%,
   100% {
-    stroke-dasharray: 700 700;
-    transform       : rotate(-90deg) scale(2);
+    stroke-dasharray: 800 800;
+    transform       : scale(2);
     opacity         : 0;
   }
 }
