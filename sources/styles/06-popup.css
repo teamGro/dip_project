@@ -50,6 +50,10 @@
   border        : none;
 }
 
+.form__fieldset div {
+  position: relative;
+}
+
 .form__elem {
   margin: 0 auto;
 

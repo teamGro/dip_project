@@ -139,7 +139,6 @@ $(function () {
         removeErrClass($(this));
       });
 
-
       $(".form__btn_submit").on("click", () => {
         checkUserData("#sendTel", nameField, telField,);
       });
@@ -192,7 +191,6 @@ $(function () {
       nameField.on("blur", function () {
         removeErrClass($(this))
       });
-
 
       let telField = $(".form__input_tel");
       telField.on("focus", function () {
@@ -250,27 +248,38 @@ $(function () {
   }).mount()
 })
 
+let dataPatterns = {
+  name: /^[а-яa-z0-9_-\S]{3,16}$/i,
+  phone: /^((\+?7|8)[ \-]?)?((\(\d{3}\))|(\d{3}))?([ \-])?(\d{3}[\- ]?\d{2}[\- ]?\d{2})$/,
+  mail: /^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/
+}
+
 function checkUserData(formType, nameField, telField, mailField = false) {
-  if (nameField.val() == "" || telField.val() == "") {
-    if (nameField.val() == "") {
-      nameField.addClass("form__field_err");
-    }
-    if (telField.val() == "") {
-      telField.addClass("form__field_err");
-    }
-    if (mailField && mailField.val() == "") {
-      mailField.addClass("form__field_err");
-    }
-    return;
-  } else {
+  if (!dataPatterns.name.test(nameField.val())) {
+    nameField.addClass("form__field_err");
+  } else if (dataPatterns.name.test(nameField.val())) {
     nameField.removeClass("form__field_err");
+  }
+
+  if (!dataPatterns.phone.test(telField.val())) {
+    telField.addClass("form__field_err");
+  } else if (dataPatterns.name.test(telField.val())) {
     telField.removeClass("form__field_err");
-    if (mailField) {
+  }
+
+  if (mailField) {
+    if (!dataPatterns.mail.test(mailField.val())) {
+      mailField.addClass("form__field_err");
+    } else if (dataPatterns.mail.test(mailField.val())) {
       mailField.removeClass("form__field_err");
     }
+  }
+
+  if (!document.querySelector(".form__field_err")) {
     $(`${formType} .form__fieldset`).remove();
     $(".form__submit").addClass("form__submit_active");
   }
+
   return;
 }
 
