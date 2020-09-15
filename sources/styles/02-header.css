@@ -167,7 +167,7 @@
 
 .symbols__elem {
   background             : linear-gradient(to bottom, #ff2f96, #ff8b5d);
-  -webkit-background-clip: text;
+  background-clip        : text;
   -webkit-text-fill-color: transparent;
 
   animation-fill-mode: none;
@@ -290,10 +290,7 @@
     border-radius: 13px;
     padding      : 0;
 
-    background               : linear-gradient(0deg, #f16521 0%, #fa0790 99%);
-    animation                : pulse;
-    animation-duration       : 2s;
-    animation-iteration-count: infinite;
+    background: linear-gradient(0deg, #f16521 0%, #fa0790 99%);
   }
 
   .callback__text {
@@ -421,7 +418,6 @@
     box-shadow: inset 500px 0 #ff4e2e;
   }
 
-
   .symbols__elem_cell {
     bottom: 79px;
     left  : 6%;
@@ -485,7 +481,7 @@
 
   .header__skills {
     min-width    : 100%;
-    margin-bottom: 49px;
+    margin-bottom: 47px;
   }
 
   .info__skills {
@@ -543,6 +539,7 @@
   }
 
   .link {
+    font-size : 16px;
     transition: all .3s linear
   }
 

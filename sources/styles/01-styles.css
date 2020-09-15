@@ -146,12 +146,13 @@ button {
 .btn {
   position: relative;
 
-  padding  : 19px 75px;
-  min-width: 280px;
+  padding     : 18px 75px;
+  /* min-width: 280px; */
 
-  color     : #ffffff;
-  text-align: center;
-  font-size : 16px;
+  color         : #ffffff;
+  text-align    : center;
+  font-size     : 16px;
+  letter-spacing: -0.35px;
 
   background-color: #ff4e2e;
   transition      : box-shadow 1s ease, color 1s ease, outline 1s ease;
@@ -178,7 +179,6 @@ button {
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400;
   font-style : normal;
-  font-size  : 25px;
 }
 
 .far {
@@ -228,7 +228,7 @@ button {
   }
 
   .btn {
-    padding: 26px 106px;
+    padding: 22px 101px;
 
     font-size: 18px;
   }

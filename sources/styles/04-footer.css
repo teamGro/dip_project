@@ -75,9 +75,11 @@
 }
 
 .social__item {
-  display   : flex;
-  width     : 40px;
-  height    : 40px;
+  display: flex;
+  width  : 40px;
+  height : 40px;
+
+  font-size : 30px;
   transition: all .3s linear;
 }
 
@@ -186,7 +188,7 @@
     border-radius: 0;
     width        : auto;
     height       : auto;
-    margin-bottom: 54px;
+    margin-bottom: 42px;
     padding      : 19px 84px;
 
     color    : #ffffff;
@@ -206,6 +208,11 @@
 }
 
 @media(min-width: 1024px) {
+  .footer__container {
+    padding-top   : 107px;
+    padding-bottom: 23px;
+  }
+
   .footer__nav-list {
     font-size: 18px;
   }
@@ -221,6 +228,10 @@
 
   .contacts__item_tel {
     margin-bottom: 34px;
+  }
+
+  .contacts__item i {
+    font-size: 18px;
   }
 
   .footer-data-container {
@@ -241,5 +252,11 @@
 
   .footer__copyright small {
     font-size: 16px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .footer__container {
+    padding-top: 83px;
   }
 }

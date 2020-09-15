@@ -25,7 +25,7 @@ $(function () {
   galleryItems.removeClass("no-js");
   galleryItem.removeClass("no-js");
 
-  menuBtnObj.menu.on("click", function (e) {
+  menuBtnObj.menu.on("click", function () {
 
     if ($(this).hasClass("mobile-menu_closed")) {
       menuBtnObj.topElem.animate()
@@ -51,29 +51,8 @@ $(function () {
       return;
     }
 
-    if ($(this).hasClass("mobile-menu_opened")) {
-      menuBtnObj.topElem.animate()
-      menuBtnObj.middleElem.animate({
-        opacity: 1
-      });
-      menuBtnObj.bottomElem.animate()
-
-      headerContainer
-        .removeClass("header__container_moved")
-        .addClass("header__container")
-
-      headerNav
-        .removeClass("navigate_opened")
-        .addClass("navigate_closed")
-
-
-      $(this)
-        .removeClass("mobile-menu_opened")
-        .addClass("mobile-menu_closed");
-      return;
-    }
-  })
-
+    closeMobileMenu(menuBtnObj, headerContainer, headerNav);
+  });
 
   linksList.on("click", (e) => {
     let target = $(e.target);
@@ -86,6 +65,7 @@ $(function () {
       scrollTop: scrollTop
     }, 500);
 
+    closeMobileMenu(menuBtnObj, headerContainer, headerNav);
   })
 
   linksListFooter.on("click", (e) => {
@@ -247,6 +227,30 @@ $(function () {
     }
   }).mount()
 })
+
+function closeMobileMenu(menuBtnObj, headerContainer, headerNav) {
+  if (menuBtnObj.menu.hasClass("mobile-menu_opened")) {
+    menuBtnObj.topElem.animate()
+    menuBtnObj.middleElem.animate({
+      opacity: 1
+    });
+    menuBtnObj.bottomElem.animate()
+
+    headerContainer
+      .removeClass("header__container_moved")
+      .addClass("header__container")
+
+    headerNav
+      .removeClass("navigate_opened")
+      .addClass("navigate_closed")
+
+
+    menuBtnObj.menu
+      .removeClass("mobile-menu_opened")
+      .addClass("mobile-menu_closed");
+    return;
+  }
+}
 
 let dataPatterns = {
   name: /^[а-яa-z0-9_-\S]{3,16}$/i,

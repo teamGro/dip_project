@@ -26,10 +26,6 @@
   line-height: 23px;
 }
 
-.my-skills__items {
-  margin-bottom: 8px;
-}
-
 .skills-list {
   display       : flex;
   flex-direction: column;
@@ -41,12 +37,64 @@
 }
 
 .skills-list__item {
-  margin-bottom: 48px;
+  display      : flex;
+  align-items  : flex-end;
+  min-height   : 115px;
+  margin-bottom: 52px;
+
+  background-image   : url("../img/png/tools.png");
+  background-image   : url("../img/webp/tools.webp");
+  background-repeat  : no-repeat;
+  background-position: center top;
+  background-size    : 60px 60px;
 }
 
-.skills-list__img {
-  margin-bottom: 9px;
-  max-width    : 60px;
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .skills-list__item {
+    background-image: url("../img/png/tools@2.png");
+    background-image: url("../img/webp/tools@2.webp");
+  }
+}
+
+.skills-list__item:nth-child(2) {
+  background-image: url("../img/png/responsive.png");
+  background-image: url("../img/webp/responsive.webp");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .skills-list__item:nth-child(2) {
+    background-image: url("../img/png/responsive@2.png");
+    background-image: url("../img/webp/responsive@2.webp");
+  }
+}
+
+.skills-list__item:nth-child(3) {
+  background-image: url("../img/png/programming.png");
+  background-image: url("../img/webp/programming.webp");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .skills-list__item:nth-child(3) {
+    background-image: url("../img/png/programming@2.png");
+    background-image: url("../img/webp/programming@2.webp");
+  }
+}
+
+.skills-list__item:last-child {
+  /* min-height      : 125px; */
+  background-image: url("../img/png/coding.png");
+  background-image: url("../img/webp/coding.webp");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .skills-list__item:last-child {
+    background-image: url("../img/png/coding@2.png");
+    background-image: url("../img/webp/coding@2.webp");
+  }
 }
 
 .gallery-section {
@@ -160,10 +208,11 @@
   }
 
   .skills-list__item {
-    width         : 50%;
-    display       : flex;
-    align-items   : center;
-    flex-direction: column;
+    width          : 50%;
+    display        : flex;
+    align-items    : center;
+    flex-direction : column;
+    justify-content: flex-end;
   }
 
   .skills-list__desc {
@@ -172,6 +221,11 @@
 }
 
 @media(min-width: 1024px) {
+  .section-wrap {
+    padding-top   : 93px;
+    padding-bottom: 110px;
+  }
+
   .section-container {
     padding-top   : 100px;
     padding-bottom: 100px;
@@ -187,7 +241,7 @@
   }
 
   .my-skills__wrap {
-    padding-top: 90px;
+    padding-top: 85px;
   }
 
   .my-skills__items {
@@ -206,6 +260,62 @@
     margin-bottom: 90px;
   }
 
+  .skills-list__item {
+    min-height   : 143px;
+    margin-bottom: 85px;
+
+    background-image: url("../img/png/tools_tablet.png");
+    background-image: url("../img/webp/tools_tablet.webp");
+    background-size : 80px 75px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    .skills-list__item {
+      background-image: url("../img/png/tools_tablet@2.png");
+      background-image: url("../img/webp/tools_tablet@2.webp");
+    }
+  }
+
+  .skills-list__item:nth-child(2) {
+    background-image: url("../img/png/responsive_tablet.png");
+    background-image: url("../img/webp/responsive_tablet.webp");
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    .skills-list__item:nth-child(2) {
+      background-image: url("../img/png/responsive_tablet@2.png");
+      background-image: url("../img/webp/responsive_tablet@2.webp");
+    }
+  }
+
+  .skills-list__item:nth-child(3) {
+    background-image: url("../img/png/programming_tablet.png");
+    background-image: url("../img/webp/programming_tablet.webp");
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    .skills-list__item:nth-child(3) {
+      background-image: url("../img/png/programming_tablet@2.png");
+      background-image: url("../img/webp/programming_tablet@2.webp");
+    }
+  }
+
+  .skills-list__item:last-child {
+    background-image: url("../img/png/coding_tablet.png");
+    background-image: url("../img/webp/coding_tablet.webp");
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    .skills-list__item:last-child {
+      background-image: url("../img/png/coding_tablet@2.png");
+      background-image: url("../img/webp/coding_tablet@2.webp");
+    }
+  }
+
   .skills-list__img {
     max-width    : 80px;
     margin-bottom: 14px;
@@ -216,7 +326,7 @@
   }
 
   .gallery__items-wrap {
-    overflow: hidden;
+    margin-bottom: 105px;
   }
 
   .work__title {
@@ -236,12 +346,19 @@
     margin-right: 30px;
   }
 
+  .gallery__bullets {
+    margin-bottom: 100px;
+  }
+
   .rates {
+    position: relative;
+
     background: linear-gradient(to bottom left, #ff2f96, #ff8b5d);
   }
 
   .rates__container {
-    padding-top: 75px;
+    padding-top   : 70px;
+    padding-bottom: 80px;
   }
 
   .rates__text {
@@ -263,7 +380,11 @@
   }
 
   .my-skills__title {
-    margin-bottom: 70px;
+    margin-bottom: 91px;
+  }
+
+  .my-skills__items {
+    margin-bottom: 5px;
   }
 
   .skills-list {
@@ -274,10 +395,12 @@
   }
 
   .skills-list__item {
-    max-width    : 285px;
-    transition   : all .3s ease;
-    margin-bottom: 70px;
-    padding      : 20px 0;
+    max-width          : 285px;
+    min-height         : 176px;
+    transition         : all .3s ease;
+    margin-bottom      : 70px;
+    padding            : 20px 0;
+    background-position: center 10px;
   }
 
   .skills-list__item:hover {
@@ -288,6 +411,10 @@
       -15px -15px 10px rgba(0, 0, 0, 0.08),
       -15px 15px 10px rgba(0, 0, 0, 0.08),
       15px -15px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  .my-skills__btn {
+    padding: 20px 67px;
   }
 
   .gallery__items-wrap {
@@ -356,6 +483,10 @@
 
   .btn-arrow_right:active {
     transform: translateY(-33px) scale(0.98) rotate(180deg);
+  }
+
+  .rates {
+    overflow: hidden;
   }
 
   .rates__container {
