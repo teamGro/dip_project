@@ -213,6 +213,7 @@ $(function () {
 
   new Glide('.glide').mount()
   new Glide('.glide', {
+    bound: true,
     startAt: 0,
     breakpoints: {
       2000: {
