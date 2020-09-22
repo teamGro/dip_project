@@ -337,11 +337,12 @@
   .header__info {
     justify-content: center;
     margin-left    : 6.2%;
+    width          : 50%;
   }
 
   .header__img-wrap {
     order        : 0;
-    flex-grow    : 1;
+    width        : 50%;
     margin-bottom: 0;
     overflow     : visible;
   }
