@@ -246,9 +246,11 @@ button {
     padding: 20px 72px;
   }
 
-  .btn:hover {
+  .btn:hover,
+  .btn:focus {
     outline   : 1px solid #ff4e2e;
     box-shadow: inset 500px 0 #fbfbfb;
     color     : #ff4e2e;
+    outline   : none;
   }
 }

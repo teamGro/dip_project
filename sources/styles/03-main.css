@@ -454,16 +454,6 @@
     background-position: center 10px;
   }
 
-  .skills-list__item:hover {
-    transform       : scale(1.5);
-    background-color: #ffffff;
-    z-index         : 5;
-    box-shadow      : 15px 15px 10px rgba(0, 0, 0, 0.08),
-      -15px -15px 10px rgba(0, 0, 0, 0.08),
-      -15px 15px 10px rgba(0, 0, 0, 0.08),
-      15px -15px 10px rgba(0, 0, 0, 0.08);
-  }
-
   .my-skills__btn {
     padding: 20px 67px;
   }

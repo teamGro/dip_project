@@ -135,8 +135,10 @@
   transition: color 0.3s linear;
 }
 
-.tel__num:hover {
-  color: #ff4e2e;
+.tel__num:hover,
+.tel__num:focus {
+  color  : #ff4e2e;
+  outline: none;
 }
 
 .header__bottom {
@@ -414,9 +416,11 @@
     transition      : all .3s linear;
   }
 
-  .callback:hover {
+  .callback:hover,
+  .callback:focus {
     color     : #fbfbfb;
     box-shadow: inset 500px 0 #ff4e2e;
+    outline   : none;
   }
 
   .symbols__elem_cell {
@@ -544,10 +548,12 @@
     transition: all .3s linear
   }
 
-  .link:hover {
+  .link:hover,
+  .link:focus {
     color        : #fc557c;
     border-bottom: 1px solid #fc557c;
     cursor       : pointer;
+    outline      : none;
   }
 
   .callback {
